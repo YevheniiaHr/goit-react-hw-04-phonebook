@@ -10,8 +10,6 @@ export const App = () => {
     return JSON.parse(window.localStorage.getItem('contacts'));
   });
   const [filter, setFilter] = useState('');
-  // const [name, setName] = useState('');
-  // const [number, setNumber] = useState('');
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -34,7 +32,6 @@ export const App = () => {
   };
 
   const getFilteredContacts = () => {
-    // const { filter, contacts } = this.state;
     const filterLowCase = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filterLowCase)
